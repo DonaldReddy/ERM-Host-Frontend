@@ -1,0 +1,30 @@
+#container {
+    min-height: max(100vh, 700px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#login-form {
+    height: 300px;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    background: #666464;
+}
+
+input {
+    border: none;
+    font-size: 30px;
+    outline: none;
+    padding: 5px;
+    cursor: pointer;
+}
+
+#login-btn {
+    font-size: 20px;
+    padding: 5px;
+    cursor: pointer;
+}

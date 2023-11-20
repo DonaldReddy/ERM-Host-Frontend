@@ -1,0 +1,32 @@
+.footer {
+    height: min(30vh, 30%);
+    background: gray;
+    display: grid;
+    grid-template-rows: 1.5fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 1vw;
+    justify-items: center;
+    align-items: center;
+    font-size: max(1.6vw, 10px);
+}
+
+.footer-options ul {
+    height: 10vh;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.footer-options a {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    font-size: max(1vw, 10px);
+}
+
+#copy-rights {
+    display: grid;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    grid-column: span 2;
+}

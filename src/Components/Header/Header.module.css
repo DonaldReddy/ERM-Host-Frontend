@@ -1,0 +1,25 @@
+.nav-bar {
+    height: 50px;
+    width: 100%;
+    background: #737272;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: max(1.6vw, 10px);
+}
+
+.nav-options {
+    width: 30%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.nav-options li {
+    list-style: none;
+}
+
+.nav-options a {
+    text-decoration: none;
+    color: black;
+}
