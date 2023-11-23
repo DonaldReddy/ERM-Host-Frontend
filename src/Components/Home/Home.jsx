@@ -19,7 +19,7 @@ function Home() {
                 <ul id={Styles['options']}>
                     <li>
                         <Link>
-                            Waiter
+                            Waiters
                         </Link>
                     </li>
                     <li>
