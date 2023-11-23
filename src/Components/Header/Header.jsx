@@ -7,9 +7,11 @@ function Header() {
         <div className={Styles['nav-bar']}>
 
             <div id={Styles['logo']}>
-                <p>
-                    ERM
-                </p>
+                <Link to=''>
+                    <p>
+                        ERM
+                    </p>
+                </Link>
             </div>
 
             <ul className={Styles['nav-options']}>

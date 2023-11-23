@@ -5,7 +5,7 @@
     align-items: center;
 }
 
-#login-form {
+#signup-form {
     height: 300px;
     width: 500px;
     display: flex;
@@ -23,7 +23,7 @@ input {
     cursor: pointer;
 }
 
-#login-btn {
+#signup-btn {
     font-size: 20px;
     padding: 5px;
     cursor: pointer;
