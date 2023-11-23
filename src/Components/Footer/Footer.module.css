@@ -1,5 +1,5 @@
 .footer {
-    height: min(30vh, 30%);
+    height: 150px;
     background: gray;
     display: grid;
     grid-template-rows: 1.5fr 1fr;
