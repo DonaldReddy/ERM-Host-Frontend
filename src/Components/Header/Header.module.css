@@ -6,7 +6,7 @@
     justify-content: space-around;
     align-items: center;
     font-size: max(1.6vw, 10px);
-    box-shadow: 0px 0px 10px black;
+    box-shadow: 0px 0px 10px rgb(255, 0, 0);
 }
 
 .nav-options {
@@ -23,4 +23,5 @@
 .nav-bar a {
     text-decoration: none;
     font-size: 2vw;
+    color: red;
 }

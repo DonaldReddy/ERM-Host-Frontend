@@ -1,0 +1,30 @@
+#container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.circle {
+    height: 10vw;
+    width: 10vw;
+    border: 10px solid rgb(223, 51, 51);
+    /* border-top: 10px solid black; */
+    border-radius: 10%;
+    animation: loader 5s linear infinite;
+}
+
+@keyframes loader {
+    0% {
+        border-radius: 10%;
+    }
+
+    50% {
+        border-radius: 50%;
+    }
+
+    100% {
+        border-radius: 10%;
+        transform: rotateZ(360deg);
+    }
+}

@@ -1,14 +1,17 @@
-import { useState } from 'react'
 import { Outlet } from 'react-router-dom'
 import Header from './Components/Header/Header'
 import Footer from './Components/Footer/Footer.jsx'
+import LoaderContextProvider from './Context/LoaderContext/LoaderContextProvider.jsx'
 
 function App() {
+
 
   return (
     <>
       <Header />
-      <Outlet />
+      <LoaderContextProvider>
+        <Outlet />
+      </LoaderContextProvider>
       <Footer />
     </>
   )
