@@ -1,38 +1,70 @@
 import axios from 'axios'
-import React, { useState, useContext, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import Loader from '../Loader/Loader.jsx'
-import LoaderContext from '../../Context/LoaderContext/LoaderContext.js'
+import Alert from '../Aleart/Alert.jsx'
 import Styles from './SignUp.module.css'
+import { useNavigate } from 'react-router-dom'
 
 function SignUp() {
 
     const [user, setUser] = useState({ email: '', password: '', repassword: '' })
     const [isMatch, setIsMatch] = useState(true)
-    const { isLoading, setIsLoading } = useContext(LoaderContext)
+    const [isLoading, setIsLoading] = useState(false)
+    const [showAlert, setShowAlert] = useState({ isShow: false, alert: '' })
+    const navigate = useNavigate()
 
     useEffect(() => {
+        setShowAlert({ isShow: false, alert: '' })
         setIsLoading(true)
         const timeout = setTimeout(() => {
             setIsLoading(false);
-            console.log("done");
         }, 1000)
-        console.log(user.email == '');
         return (timeout) => { clearTimeout(timeout) }
     }, [])
 
     async function handleSignUp(event) {
         event.preventDefault()
-        setIsLoading(true)
-        const response = await axios.post("http://192.168.1.109:8000/signup", user, {
-            headers: {
-                'Content-Type': 'application/x-www-form-urlencoded',
-            },
-        })
-        if (!response.data.status)
-            console.log(response.data.error);
-        else
-            console.log('successfully signed up');
-        setIsLoading(false)
+        try {
+
+            setIsLoading((prev) => {
+                console.log(new Date().getTime());
+                return true
+            })
+
+            const response = await axios.post("http://192.168.1.109:8000/signup", user, {
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+            })
+            if (!response.data.status) {
+                console.log(response.data.error);
+                throw new Error(response.data.error)
+            }
+            else {
+                setTimeout(() => {
+                    setIsLoading(false)
+                    setShowAlert({ isShow: true, alert: 'Signed in successfully, please log in' })
+                    setTimeout(() => {
+                        setShowAlert({ isShow: false, alert: '' })
+                        navigate('/')
+                    }, 3100)
+                }, 2000)
+            }
+
+
+
+        } catch (error) {
+            setTimeout(() => {
+                setIsLoading(false)
+            }, 3000)
+            setTimeout(() => {
+                setShowAlert({ isShow: true, alert: 'Email already in use' })
+                setTimeout(() => {
+                    console.log(new Date().getTime());
+                    setShowAlert({ isShow: false, alert: '' })
+                }, 3000)
+            }, 3200)
+        }
     }
 
 
@@ -54,7 +86,7 @@ function SignUp() {
 
         isLoading ? <Loader /> :
             <div id={Styles['container']}>
-
+                {(showAlert.isShow ? <Alert alert={showAlert.alert} /> : '')}
 
                 <form id={Styles['signup-form']}>
                     <input name='email' type='email' placeholder='Email' onChange={handleChange} />

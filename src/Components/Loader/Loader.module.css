@@ -6,10 +6,9 @@
 }
 
 .circle {
-    height: 10vw;
-    width: 10vw;
-    border: 10px solid rgb(223, 51, 51);
-    /* border-top: 10px solid black; */
+    height: 3vw;
+    width: 3vw;
+    border: 4px solid rgb(223, 51, 51);
     border-radius: 10%;
     animation: loader 5s linear infinite;
 }

@@ -25,6 +25,10 @@ input {
     cursor: pointer;
 }
 
+input:focus {
+    outline: 1px solid red;
+}
+
 #signup-btn {
     font-size: 1.7vw;
     padding: 5px;

@@ -1,13 +1,12 @@
 import axios from 'axios'
-import React, { useState, useContext, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import Loader from '../Loader/Loader.jsx'
-import LoaderContext from '../../Context/LoaderContext/LoaderContext.js'
 import Styles from './Login.module.css'
 
 function Login() {
 
     const [user, setUser] = useState({ email: '', password: '' })
-    const { isLoading, setIsLoading } = useContext(LoaderContext)
+    const [isLoading, setIsLoading] = useState(false)
 
     useEffect(() => {
         setIsLoading(true)
