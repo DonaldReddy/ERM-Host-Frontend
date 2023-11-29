@@ -1,7 +1,7 @@
 import axios from 'axios'
 import React, { useState, useEffect } from 'react'
-import Loader from '../Loader/Loader.jsx'
-import Alert from '../Alert/Alert.jsx'
+import Loader from '../../Loader/Loader.jsx'
+import Alert from '../../Alert/Alert.jsx'
 import Styles from './Login.module.css'
 import { useNavigate } from 'react-router-dom'
 
