@@ -3,6 +3,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    background: rgb(73, 3, 3);
 }
 
 #login-form {
@@ -12,12 +13,12 @@
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    background: #e5e3e3;
+    background: #b2afaf;
     box-shadow: 0px 0px 20px red;
     border-radius: 20px;
 }
 
-input {
+#login-form input {
     border: none;
     font-size: 2vw;
     outline: none;
@@ -25,8 +26,14 @@ input {
     cursor: pointer;
 }
 
+#login-form input:focus {
+    outline: 1px solid red;
+}
+
 #login-btn {
     font-size: 1.7vw;
     padding: 5px;
     cursor: pointer;
+    border: none;
+    outline: 1px solid red;
 }

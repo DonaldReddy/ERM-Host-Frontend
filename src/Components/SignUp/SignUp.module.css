@@ -17,7 +17,7 @@
     border-radius: 20px;
 }
 
-input {
+#signup-form input {
     border: none;
     font-size: 2vw;
     outline: none;
@@ -25,8 +25,8 @@ input {
     cursor: pointer;
 }
 
-input:focus {
-    outline: 1px solid red;
+#signup-form input:focus {
+    outline: 1px solid rgb(255, 0, 0);
 }
 
 #signup-btn {
